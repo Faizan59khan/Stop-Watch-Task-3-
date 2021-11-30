@@ -1,0 +1,163 @@
+/* VARIABLES */
+$myFont: 'Stardos Stencil', cursive,'Hind Siliguri', sans-serif;
+$myColor:#000;
+$btnColor: #ffff;
+$myFontSize: 3rem;
+$myWidth: 55%;
+$bgColor: rgb(255, 255, 51);
+
+
+/* ========================================MIXIN =======================================*/
+
+@mixin laps-property{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    width: $myWidth;
+    background: $btnColor;
+    border-radius: 35px;
+    margin: 20px auto;
+    padding: 1rem;
+    font-size: 1.6rem;
+    box-shadow: 7px 7px 9px rgba(0,0,0,0.15), -7px -7px 9px rgb(230, 230, 0);
+   
+  }
+@mixin clock-tick{
+        position: absolute;
+        background: black;
+        border-radius: 10px; 
+        transform-origin: bottom;       //clock tick not moves from the bottom
+}
+
+/* ============================================================== */
+
+
+/*=================================== Global CSS ===============================================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+a,button{
+    cursor: pointer;
+}
+
+body{
+
+    background: $bgColor;
+
+}
+
+
+/* =========================Analog watch ================================= */
+.analog-watch{
+    position: relative;
+    background: url("../images/clock.png") no-repeat;
+    width: 40vw;
+    height: 40vh;
+    left: 10%;
+    background-size: 40%;
+    margin: 0 auto;
+
+    #hourA{
+        @include clock-tick;
+        width: 1%;
+        height: 16%;
+        top: 25%;
+        left: 19.5%;
+        opacity: 0.8;  
+    }
+    #minA{
+        @include clock-tick;
+        width: 0.8%;
+        height: 22%;
+        top: 19%;
+        left: 19.3%;
+        opacity: 0.8;  
+    }
+    #secA{
+        @include clock-tick;
+        width: 0.5%;
+        height: 22%;
+        top: 17%;
+        left: 19.5%;
+        opacity: 0.8; 
+        
+    }
+}
+
+
+/* ============================== Digital Watch ============================= */
+
+.digital-watch{
+
+    margin: 0 auto;
+    width: $myWidth;
+    font-size: $myFontSize;
+    display: flex;
+    padding: 1rem;
+
+
+    h1{                                             //nesting
+        font-family: $myFont;
+        text-align: center;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 8px rgb(191, 191, 191);
+    }
+    h1:first-child{
+        margin-left: 8rem;
+    }
+}
+
+/* ============================Buttons ================================ */
+
+.buttons{
+   
+    margin: 0 auto;
+    width: $myWidth;
+   
+    .watch-btn{
+      font-size: 1.2rem;
+      width: 70px;
+      height: 70px;
+      outline: none;
+      padding: 2px;
+      background: $btnColor;
+      border: none;
+      border-radius: 50%;
+      margin: 0.5em;
+      box-shadow: -3px -3px 7px rgb(204, 204, 0), 3px 3px 7px $myColor;
+    }
+    .watch-btn:first-child{
+        margin-left: 15rem;
+    }
+
+    .watch-btn:hover{
+        background: $myColor;
+        color: $btnColor;
+    }
+    .watch-btn:last-child:hover{
+        cursor: no-drop;
+    }
+}
+
+/* ==============================lAPS ================================== */
+.laps{
+    @include laps-property;
+    .laps-item{
+        padding: .2em;
+        text-align: center;
+    }
+}
+
+.laps-body{
+    @include laps-property;
+    .laps-item{
+        padding: .2em;
+        text-align: center;
+    }
+}
+

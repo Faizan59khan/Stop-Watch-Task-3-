@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="./sass/style.css">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=M+PLUS+1:wght@100&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+</head>
+<body>
+    
+    <div class="main-container">
+
+      <div class="watches">
+        <div class="analog-watch">
+            <div id="hourA"></div>
+            <div id="minA"></div>
+            <div id="secA"></div>
+
+        </div>
+        
+        <div class="digital-watch">
+
+            
+            <h1 id="hour">00:</h1>
+            <h1 id="min">00:</h1>
+            <h1 id="sec">00:</h1>
+            <h1 id="msec">00</h1>
+
+
+        </div>
+    </div>
+        <div class="buttons">
+            
+            <button onclick="start(); this.disabled=true" id="start-btn" class="watch-btn">Start</button>
+            <button onclick="pause()" class="watch-btn">Pause</button>
+            <button onclick="reset()" class="watch-btn">Reset</button>
+            <button onclick="split();" disabled id="split-btn" class="watch-btn">Split</button>
+              
+
+        </div>
+
+
+       <div class="laps">      
+          <div class="laps-item">S.No</div>
+          <div class="laps-item">Time</div>
+          <div class="laps-item">Total Time</div>
+       </div>
+       
+     <div class="laps-wrapper"></div>
+
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
